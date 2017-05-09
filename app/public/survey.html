@@ -169,19 +169,18 @@
   		var newFriend = {
   			friendName: $("#name").val().trim(),
   			photo: $("#photo").val().trim(),
-  			scores: [$("q1").val(), ("q2").val(), ("q3").val(), ("q4").val(), ("q5").val(), ("q6").val(), ("q7").val(), ("q8").val(), ("q9").val(), ("q10").val(), ]
+  			scores: [$("q1").val(), ("q2").val(), ("q3").val(), ("q4").val(), ("q5").val(), ("q6").val(), ("q7").val(), ("q8").val(), ("q9").val(), ("q10").val() ]
   		};
 
   		console.log(newFriend);
-  		return false;
 
   		var currentURL = window.location.origin;
 
   		$.post(currentURL + "/api/friends", newFriend, function(data) {
   			$("#name").val("");
-  			$("#photo"),val("");
+  			$("#photo").val("");
 
-  			});
+  		});
   	});
 
 
@@ -191,7 +190,7 @@
      
       var currentURL = window.location.origin;
       // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
-      $.ajax({ url: currentURL + "/api/friends", method: "GET" })
+      $.ajax({ url: currentURL + "/api/friends", method: "POST" })
       .done(function(friendData) {
       
         console.log("------------------------------------");
@@ -200,7 +199,7 @@
         console.log(friendData);
         console.log("------------------------------------");
         // Loop through and display each of the customers
-        for (var i = 0; i < tableData.length; i++) {
+        for (var i = 0; i < friendData.length; i++) {
           // Create the HTML Well (Section) and Add the table content for each reserved table
           var friendSection = $("<div>");
           friendSection.addClass("well");
@@ -208,9 +207,10 @@
           $("#friendSection").append(tableSection);
           var friendNumber = i + 1;
           // Then display the remaining fields in the HTML (Section Name, Date, URL)
-          $("#friendWell-" + i + 1).append("<h2><span class='label label-primary'>" + friendName 
-      });
-    };
+          $("#friendWell-" + i + 1).append("<h2><span class='label label-primary'>" + friendName) 
+      };
+    });
+};
 
 
 
