@@ -31,7 +31,7 @@
               <hr>
               <h3><strong>Question 1</strong></h3>
 				<h4>Placeholder Question</h4>
-				<select data-placeholder class="chosen-select" id="q1"
+				<select data-placeholder class="chosen-select" id="q1">
 					<option value></option>
 					<option value=""></option>
 					<option value="1">1 (Strongly Disagree)</option>
@@ -43,7 +43,7 @@
 
 				 <h3><strong>Question 2</strong></h3>
 				<h4>Placeholder Question</h4>
-				<select data-placeholder class="chosen-select" id="q2"
+				<select data-placeholder class="chosen-select" id="q2">
 					<option value></option>
 					<option value=""></option>
 					<option value="1">1 (Strongly Disagree)</option>
@@ -55,7 +55,7 @@
 
 				 <h3><strong>Question 3</strong></h3>
 				<h4>Placeholder Question</h4>
-				<select data-placeholder class="chosen-select" id="q3"
+				<select data-placeholder class="chosen-select" id="q3">
 					<option value></option>
 					<option value=""></option>
 					<option value="1">1 (Strongly Disagree)</option>
@@ -67,7 +67,7 @@
 
 				 <h3><strong>Question 4</strong></h3>
 				<h4>Placeholder Question</h4>
-				<select data-placeholder class="chosen-select" id="q4"
+				<select data-placeholder class="chosen-select" id="q4">
 					<option value></option>
 					<option value=""></option>
 					<option value="1">1 (Strongly Disagree)</option>
@@ -79,7 +79,7 @@
 
 				 <h3><strong>Question 5</strong></h3>
 				<h4>Placeholder Question</h4>
-				<select data-placeholder class="chosen-select" id="q5"
+				<select data-placeholder class="chosen-select" id="q5">
 					<option value></option>
 					<option value=""></option>
 					<option value="1">1 (Strongly Disagree)</option>
@@ -91,7 +91,7 @@
 
 				 <h3><strong>Question 6</strong></h3>
 				<h4>Placeholder Question</h4>
-				<select data-placeholder class="chosen-select" id="q6"
+				<select data-placeholder class="chosen-select" id="q6">
 					<option value></option>
 					<option value=""></option>
 					<option value="1">1 (Strongly Disagree)</option>
@@ -103,7 +103,7 @@
 
 				 <h3><strong>Question 7</strong></h3>
 				<h4>Placeholder Question</h4>
-				<select data-placeholder class="chosen-select" id="q7"
+				<select data-placeholder class="chosen-select" id="q7">
 					<option value></option>
 					<option value=""></option>
 					<option value="1">1 (Strongly Disagree)</option>
@@ -115,7 +115,7 @@
 
 				 <h3><strong>Question 8</strong></h3>
 				<h4>Placeholder Question</h4>
-				<select data-placeholder class="chosen-select" id="q8"
+				<select data-placeholder class="chosen-select" id="q8">
 					<option value></option>
 					<option value=""></option>
 					<option value="1">1 (Strongly Disagree)</option>
@@ -127,7 +127,7 @@
 
 				 <h3><strong>Question 9</strong></h3>
 				<h4>Placeholder Question</h4>
-				<select data-placeholder class="chosen-select" id="q9"
+				<select data-placeholder class="chosen-select" id="q9">
 					<option value></option>
 					<option value=""></option>
 					<option value="1">1 (Strongly Disagree)</option>
@@ -139,7 +139,7 @@
 
 				 <h3><strong>Question 10</strong></h3>
 				<h4>Placeholder Question</h4>
-				<select data-placeholder class="chosen-select" id="q10"
+				<select data-placeholder class="chosen-select" id="q10">
 					<option value></option>
 					<option value=""></option>
 					<option value="1">1 (Strongly Disagree)</option>
@@ -169,7 +169,10 @@
   		var newFriend = {
   			friendName: $("#name").val().trim(),
   			photo: $("#photo").val().trim(),
-  			scores: [$("q1").val(), ("q2").val(), ("q3").val(), ("q4").val(), ("q5").val(), ("q6").val(), ("q7").val(), ("q8").val(), ("q9").val(), ("q10").val() ]
+	  		scores: [
+
+	  		$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val() 
+	  		]
   		};
 
   		console.log(newFriend);
@@ -184,33 +187,6 @@
   	});
 
 
-
-
-  	function runTableQuery() {
-     
-      var currentURL = window.location.origin;
-      // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
-      $.ajax({ url: currentURL + "/api/friends", method: "POST" })
-      .done(function(friendData) {
-      
-        console.log("------------------------------------");
-        console.log("URL: " + currentURL + "/api/friends");
-        console.log("------------------------------------");
-        console.log(friendData);
-        console.log("------------------------------------");
-        // Loop through and display each of the customers
-        for (var i = 0; i < friendData.length; i++) {
-          // Create the HTML Well (Section) and Add the table content for each reserved table
-          var friendSection = $("<div>");
-          friendSection.addClass("well");
-          friendSection.attr("id", "friendWell-" + i + 1);
-          $("#friendSection").append(tableSection);
-          var friendNumber = i + 1;
-          // Then display the remaining fields in the HTML (Section Name, Date, URL)
-          $("#friendWell-" + i + 1).append("<h2><span class='label label-primary'>" + friendName) 
-      };
-    });
-};
 
 
 
