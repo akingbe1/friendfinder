@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Reservation Page</title>
+  <title>Survey Page</title>
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
@@ -30,7 +30,7 @@
               </div>
               <hr>
               <h3><strong>Question 1</strong></h3>
-				<h4>Placeholder Question</h4>
+				<h4>I love music.</h4>
 				<select data-placeholder class="chosen-select" id="q1">
 					<option value></option>
 					<option value=""></option>
@@ -42,7 +42,7 @@
 				</select>
 
 				 <h3><strong>Question 2</strong></h3>
-				<h4>Placeholder Question</h4>
+				<h4>I love the outdoors.</h4>
 				<select data-placeholder class="chosen-select" id="q2">
 					<option value></option>
 					<option value=""></option>
@@ -54,7 +54,7 @@
 				</select>
 
 				 <h3><strong>Question 3</strong></h3>
-				<h4>Placeholder Question</h4>
+				<h4>I love pets.</h4>
 				<select data-placeholder class="chosen-select" id="q3">
 					<option value></option>
 					<option value=""></option>
@@ -66,7 +66,7 @@
 				</select>
 
 				 <h3><strong>Question 4</strong></h3>
-				<h4>Placeholder Question</h4>
+				<h4>I have to have a cup of coffee every morning.</h4>
 				<select data-placeholder class="chosen-select" id="q4">
 					<option value></option>
 					<option value=""></option>
@@ -78,7 +78,7 @@
 				</select>
 
 				 <h3><strong>Question 5</strong></h3>
-				<h4>Placeholder Question</h4>
+				<h4>I believe a good education is very important.</h4>
 				<select data-placeholder class="chosen-select" id="q5">
 					<option value></option>
 					<option value=""></option>
@@ -90,7 +90,7 @@
 				</select>
 
 				 <h3><strong>Question 6</strong></h3>
-				<h4>Placeholder Question</h4>
+				<h4>I love pizza.</h4>
 				<select data-placeholder class="chosen-select" id="q6">
 					<option value></option>
 					<option value=""></option>
@@ -102,7 +102,7 @@
 				</select>
 
 				 <h3><strong>Question 7</strong></h3>
-				<h4>Placeholder Question</h4>
+				<h4>I put value in experiences rather than in possessions.</h4>
 				<select data-placeholder class="chosen-select" id="q7">
 					<option value></option>
 					<option value=""></option>
@@ -114,7 +114,7 @@
 				</select>
 
 				 <h3><strong>Question 8</strong></h3>
-				<h4>Placeholder Question</h4>
+				<h4>I am always early to rise and early to bed.</h4>
 				<select data-placeholder class="chosen-select" id="q8">
 					<option value></option>
 					<option value=""></option>
@@ -126,7 +126,7 @@
 				</select>
 
 				 <h3><strong>Question 9</strong></h3>
-				<h4>Placeholder Question</h4>
+				<h4>I love to party on the weekends.</h4>
 				<select data-placeholder class="chosen-select" id="q9">
 					<option value></option>
 					<option value=""></option>
@@ -138,7 +138,7 @@
 				</select>
 
 				 <h3><strong>Question 10</strong></h3>
-				<h4>Placeholder Question</h4>
+				<h4>I am a social drinker.</h4>
 				<select data-placeholder class="chosen-select" id="q10">
 					<option value></option>
 					<option value=""></option>
@@ -165,38 +165,20 @@
   </div>
   <script type="text/javascript">
   	$(".submit").on("click", function() {
-
   		var newFriend = {
   			friendName: $("#name").val().trim(),
   			photo: $("#photo").val().trim(),
 	  		scores: [
-
 	  		$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val() 
 	  		]
   		};
-
   		console.log(newFriend);
-
   		var currentURL = window.location.origin;
-
   		$.post(currentURL + "/api/friends", newFriend, function(data) {
   			$("#name").val("");
   			$("#photo").val("");
-
   		});
   	});
-
-
-
-
-
-
-
-
-
-
-
-
   
   </script>
 </body>

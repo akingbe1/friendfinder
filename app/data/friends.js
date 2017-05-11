@@ -1,7 +1,7 @@
 var friendsArray = [
 {
 		//Dummy Data
-		"name":"John", 
+		"friendName":"John", 
 		"photo":"N/A",
 		"scores":[1,1,1,1,1,1,1,1,1,1]
 	},
